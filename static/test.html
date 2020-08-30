@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      // function foo(num) {
+      //     console.log('foo: '+ num)
+      //     this.count++
+      //     console.log(this)
+      // }
+      // // foo.count = 0;
+      // var i
+      // for(i=0;i<1;i++){
+      //     if(i>=0) {
+      //         foo(i)
+      //     }
+      // }
+
+      // let abc = {
+      //     num: 123,
+      //     fn: function() {
+      //         console.log(this)
+      //     }
+      // }
+      //
+      // abc.fn()
+      //
+      // function method() {
+      //     alert(this.value);  // 输出 42  第二个this
+      // }
+
+      function Foo() {
+          this.value = 42;
+          setTimeout(function() {
+              console.log(this)
+              console.log(this.value);  // 输出 42  第二个this
+          }, 500);  // 这里this指向window   第一个this
+      }
+
+      new Foo();
+
+    </script>
+</body>
+</html>
